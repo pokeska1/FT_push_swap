@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 21:35:50 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/19 21:40:27 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 21:21:31 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 static int	proverkaminus(char *str, int i)
 {
-	int minus;
-	int check;
+	int	minus;
+	int	check;
 
 	minus = 0;
 	check = 0;
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v' ||
-	str[i] == '\f' || str[i] == '\r' || str[i] == '\n'
-	|| str[i] == '+' || str[i] == '-')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == '\n'
+		|| str[i] == '+' || str[i] == '-')
 	{
 		while (str[i] == '+' || str[i] == '-')
 		{
@@ -42,9 +42,9 @@ static int	proverkaminus(char *str, int i)
 
 static int	probel(char *str, int i)
 {
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v' ||
-	str[i] == '\f' || str[i] == '\r' || str[i] == '\n' ||
-	str[i] == '0' || str[i] == '+' || str[i] == '-')
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r' || str[i] == '\n'
+		|| str[i] == '0' || str[i] == '+' || str[i] == '-')
 	{
 		i++;
 		if (str[i] == '+' || str[i] == '-' || str[i] == '0')
@@ -67,7 +67,7 @@ static int	probel(char *str, int i)
 
 static int	proverkanebukva(char *str, int i, int minus)
 {
-	int mimik;
+	int	mimik;
 
 	mimik = i + 1 % 10;
 	if (minus != 0)
@@ -82,8 +82,8 @@ static int	proverkanebukva(char *str, int i, int minus)
 
 static int	zapis(char *str, int i, int minus)
 {
-	int shet;
-	int sum;
+	int	shet;
+	int	sum;
 
 	sum = 0;
 	shet = 0;
@@ -104,11 +104,11 @@ static int	zapis(char *str, int i, int minus)
 	return (sum);
 }
 
-int			ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int i;
-	int minus;
-	int result;
+	int	i;
+	int	minus;
+	int	result;
 
 	i = 0;
 	minus = proverkaminus(str, i);

@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 12:56:18 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 03:15:20 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 23:03:28 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_all all;
+	t_all	all;
 
 	all.error = 0;
 	if (argc < 2)
@@ -26,15 +26,17 @@ int	main(int argc, char **argv)
 	if (all.error == -1)
 		ft_error("Error: you have replica int");
 	if (!ft_numbers_sorted(all.num, all.len_full))
-		ft_parser(&all, all.len_full);
-	/*
-	int i;
-	i = 0;
-	while (i != argc - 1)
 	{
-		printf("%d \n", num[i++]);
+		all.lenb = 1;
+		all.lena = all.len_full;
+		all.numb = ft_calloc_int(all.numb, all.len_full);
+		ft_parser(&all, all.len_full);
 	}
-	*/
-	free(all.num);
-	return(0);
+	if (ft_numbers_sorted(all.num, all.len_full))
+		ft_write("OK\n");
+	else
+		ft_write("KO\n");
+	if (all.num)
+		free(all.num);
+	return (0);
 }

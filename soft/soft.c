@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:08:42 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 03:02:18 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 21:22:02 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_calloc(int i)
 	j = 0;
 	str = malloc(i + 1);
 	if (!str)
-		return(NULL);
+		return (NULL);
 	while (j != i)
 	{
 		str[j] = '\0';
@@ -42,10 +42,10 @@ int	ft_strlen(char *str)
 	i = 0;
 	while (str[i] != '\0')
 		i++;
-	return(i);
+	return (i);
 }
 
-char *ft_cpy(char *str, int num)
+char	*ft_cpy(char *str, int num)
 {
 	char	*mimik;
 	int		i;
@@ -53,13 +53,13 @@ char *ft_cpy(char *str, int num)
 	i = 0;
 	mimik = ft_calloc(ft_strlen(str));
 	if (!mimik)
-		return(NULL);
+		return (NULL);
 	while (str[num] != '\0')
 	{
 		mimik[num] = str[num];
 		i++;
 	}
-	return(mimik);
+	return (mimik);
 }
 
 void	ft_join_char(char *str1, char *str2)

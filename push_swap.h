@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 02:09:54 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 04:03:34 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 22:12:41 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ typedef struct s_all
 	int		j;
 	int		check;
 	int		len_full;
-	int 	lena;
-	int 	lenb;
+	int		lena;
+	int		lenb;
 	int		buf;
 }			t_all;
 
@@ -58,8 +58,10 @@ int		ft_min_max_midl(t_all *all);
 int		ft_more_nide(int *num, int len, int numer);
 int		ft_rra_or_ra_numb(int i, int len);
 int		is_digit_char(char c);
-void	sort_mor_one_hundred(t_all *all,int len);
-void	ft_one_hundred_num(t_all *all,int len);
-
+void	sort_mor_one_hundred(t_all *all, int len);
+void	ft_one_hundred_num(t_all *all, int len);
+void	ft_five_hundred_num(t_all *all, int len);
+char	*ft_strcpy(char *str);
+int		*ft_strcpy_int(int *num, int len);
 
 #	endif

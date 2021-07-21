@@ -6,44 +6,64 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 12:57:32 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/20 23:41:02 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 21:45:27 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+int	*rra(int *num, int len)
+{
+	int	*mimik;
+	int	i;
+	int	j;
+
+	ft_write("rra\n");
+	mimik = NULL;
+	i = 0;
+	j = 1;
+	mimik = ft_calloc_int(mimik, len);
+	mimik[0] = num[len - 1];
+	while (j < len)
+	{
+		mimik[j] = num [i];
+		i++;
+		j++;
+	}
+	free(num);
+	return (mimik);
+}
+
 int	*sa(int *str)
 {
-	int		i;
+	int	i;
 	int	mimik;
 	int	remimik;
 
 	ft_write("sa\n");
 	i = 0;
-	// if (!str[i])
-	// 	return(str);
 	mimik = str[0];
 	remimik = str[1];
 	str[0] = remimik;
 	str[1] = mimik;
-	return(str);
+	return (str);
 }
 
 int	*sb(int *str)
 {
-	int		i;
+	int	i;
 	int	mimik;
 	int	remimik;
 
 	ft_write("sb\n");
 	i = 0;
 	if (!str[i])
-		return(str);
+		return (str);
 	mimik = str[0];
 	remimik = str[1];
 	str[0] = remimik;
 	str[1] = mimik;
-	return(str);
+	return (str);
 }
 
 void	ss(int *stra, int *strb)

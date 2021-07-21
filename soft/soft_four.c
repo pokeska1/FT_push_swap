@@ -1,55 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_it_valid.c                                      :+:      :+:    :+:   */
+/*   soft_four.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/08 16:46:58 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 21:22:34 by jmarian          ###   ########.fr       */
+/*   Created: 2021/07/21 22:06:04 by jmarian           #+#    #+#             */
+/*   Updated: 2021/07/21 22:27:12 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_is_it_valid(t_all *all, int len)
+char *ft_strcpy(char *str)
 {
-	all->i = 0;
-	all->j = 0;
-	while (all->j != len)
-	{
-		if (all->j + 1 < len)
-			all->i = all->j + 1;
-		else
-			break ;
-		while (all->i != len)
-		{
-			if (all->num[all->j] == all->num[all->i])
-			{
-				all->error = -1;
-				return ;
-			}
-			all->i++;
-		}
-		all->j++;
-	}
-	all->i = len;
-	return ;
-}
-
-int	ft_numbers_sorted(int *num, int	len)
-{
-	int	i;
-	int	j;
+	int		i;
+	char	*mimik;
 
 	i = 0;
-	j = 0;
-	while (i != len)
+	mimik = ft_calloc(ft_strlen(str));
+	while (str[i])
 	{
-		if (i + 1 < len)
-			if (num[i] > num[i + 1])
-				return (0);
+		mimik[i] = str[i];
 		i++;
 	}
-	return (1);
+	free(str);
+	return (mimik);
 }
+
+int	*ft_strcpy_int(int *num, int len)
+{
+	int	*sum;
+	int	i;
+
+	i = 0;
+	sum = NULL;
+	sum = ft_calloc_int(sum, len);
+	while (i < len)
+	{
+		sum[i] = num[i];
+		i++;
+	}
+	free(num);
+	return (sum);
+}
+

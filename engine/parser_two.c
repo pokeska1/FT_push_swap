@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_mor_one_hundred.c                             :+:      :+:    :+:   */
+/*   parser_two.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/07/21 03:31:43 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 21:22:57 by jmarian          ###   ########.fr       */
+/*   Created: 2021/07/21 21:38:06 by jmarian           #+#    #+#             */
+/*   Updated: 2021/07/21 21:38:54 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_one_hundred_num(t_all *all, int len)
+void	ft_five_hundred_num(t_all *all, int len)
 {
 	(void)all;
 	(void)len;
