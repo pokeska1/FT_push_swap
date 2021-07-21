@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 22:37:58 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 02:03:46 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 04:32:49 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,16 @@ void	ft_meh(t_all *all, int len) // вставляем в нужное месс�
 	if (all->check == 2)
 		{
 			pa(all, len);
-			all->num = ra(all->num, all->lena);
+			//all->num = ra(all->num, all->lena);
 		}
-		else if (all->check == 1)
+		else if (all->check == 1 || all->check == 0)
 		{
 			all->buf = ft_more_nide(all->num, all->lena, all->numb[0]);
 			while (1)
 			{
 				if(all->numb[0] < all->num[0] && all->numb[0] > all->num[all->lena - 1])
+					break;
+				if(all->check == 0 && ft_min(all->num, all->lena - 1) == 0)
 					break;
 				if (ft_rra_or_ra_numb(all->buf, all->lena) == 1)
 					all->num = rra(all->num, all->lena);
@@ -80,12 +82,15 @@ void	ft_five_num(t_all *all, int len)
 		pb(all, len);
 	}
 	all->num = ft_three_num(all->num);
-	all->check = ft_min_max_midl(all);
 	if (len == 4)
+	{
+		all->check = ft_min_max_midl(all);
 		ft_meh(all, len);
+	}
 	else
 	{
 		ft_two_num(all, 1);
+		all->check = ft_min_max_midl(all);
 		ft_meh(all, len);
 		all->check = ft_min_max_midl(all);
 		ft_meh(all, len);
@@ -101,7 +106,7 @@ void	ft_parser(t_all *all, int len)
 	//malloc(sizeof(int) * all->lenb);
 	if (len == 1)
 	{
-		ft_write("OK\n");
+		// ft_write("OK\n");
 		return;
 	}
 	else if (len == 2)
@@ -110,10 +115,10 @@ void	ft_parser(t_all *all, int len)
 	 	all->num = ft_three_num(all->num);
 	else if (len <= 5)
 	 	ft_five_num(all, len);
-	// else if (len <= 99)
-	// 	ft_one_hundred_num(num, len);
+	else if (len <= 99)
+	 	ft_one_hundred_num(all, len);
 	// else if (len > 99)
-	// 	ft_five_hundred_num(num, len);
+	// 	ft_five_hundred_num(all, len);
 	
 	// #################### сортировка к норме 
 	all->buf = ft_min(all->num, len);
@@ -127,8 +132,10 @@ void	ft_parser(t_all *all, int len)
 	// #################### конец сортировки к норме 
 
 	
-	if (ft_numbers_sorted(all->num, len))
-		ft_write("OK\n");
+	// if (ft_numbers_sorted(all->num, len))
+	// 	ft_write("OK\n");
+	// else
+	// 	ft_write("KO\n");
 	//free(all->num);
 	//free(all->numb);
 }

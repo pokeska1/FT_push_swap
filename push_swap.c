@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 12:56:18 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 00:39:57 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 03:15:20 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@ int	main(int argc, char **argv)
 	ft_make_int(argc, argv, &all);
 	if (all.error == -1)
 		ft_error("Error: you have replica int");
-	ft_is_it_valid(&all, argc - 1);
+	ft_is_it_valid(&all, all.len_full);
 	if (all.error == -1)
 		ft_error("Error: you have replica int");
-	if (!ft_numbers_sorted(all.num, argc - 1))
-		ft_parser(&all, argc - 1);
+	if (!ft_numbers_sorted(all.num, all.len_full))
+		ft_parser(&all, all.len_full);
 	/*
 	int i;
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:08:42 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/19 21:40:35 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 03:02:18 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ char	*ft_calloc(int i)
 		return(NULL);
 	while (j != i)
 	{
-		str[i] = '\0';
-		i++;
+		str[j] = '\0';
+		j++;
 	}
 	return (str);
 }

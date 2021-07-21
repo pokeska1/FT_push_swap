@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 22:05:48 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 01:36:31 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 03:07:08 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,17 @@ int	ft_min_max_midl(t_all *all)// если numb[0] самое большое ч�
 	if (all->numb[0] < all->num[0] && all->numb[0] < all->num[1] && all->numb[0] < all->num[2])
 		return (0);
 	organaizer(all);
+	return(1);
+}
+
+int	is_digit_char(char c)
+{
+	if (c < 48 || c > 57)
+	{
+		if(c == '-')
+			return(1);
+		else
+			return(0);
+	}
 	return(1);
 }
