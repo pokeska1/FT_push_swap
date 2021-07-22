@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:06:45 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 22:58:12 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/22 03:10:01 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ void	pb_two(t_all *all, int len)
 		all->num = NULL;
 	}
 	all->num = ft_strcpy_int(all->mimik, all->lena);
-	// free(all->num);
-	// all->num = all->mimik;
 	all->i = 0;
 	all->j = 1;
 	all->mimiktwo[0] = all->buf;
@@ -71,9 +69,7 @@ void	pb_two(t_all *all, int len)
 		all->i++;
 		all->j++;
 	}
-	// free(all->numb);
 	organaizer(all);
-	// all->numb = all->mimiktwo;
 	if (all->numb)
 	{
 		free(all->numb);
@@ -87,11 +83,11 @@ void	pb(t_all *all, int len)
 	ft_write("pb\n");
 	all->lenb++;
 	all->lena--;
-	all->mimik = ft_calloc_int(all->mimik, len);
-	all->mimiktwo = ft_calloc_int(all->mimiktwo, len);
+	all->mimik = ft_calloc_int(all->mimik, all->len_full);
+	all->mimiktwo = ft_calloc_int(all->mimiktwo, all->len_full);
 	all->i = 0;
 	all->j = 1;
-	while (all->j != len)
+	while (all->j != all->lena)
 	{
 		all->mimik[all->i] = all->num[all->j];
 		all->i++;

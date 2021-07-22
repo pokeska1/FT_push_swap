@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 22:37:58 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 22:31:23 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/22 03:11:11 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,20 @@ void	ft_parser(t_all *all, int len)
 	else if (len <= 5)
 		ft_five_num(all, len);
 	else if (len <= 99)
+	{
+		all->check = 0;
 		ft_one_hundred_num(all, len);
+		all->i = wich_one(all->j, all->j , ((all->len_full + 1) / 2), all);
+		// while (all->steck[len] != all->numb[all->i])
+		// {
+			
+		// }
+	}
 	else if (len > 99)
+	{
+		all->check = 0;
 		ft_five_hundred_num(all, len);
+	}
 	all->buf = ft_min(all->num, len);
 	while (!ft_numbers_sorted(all->num, len))
 	{
@@ -121,7 +132,6 @@ void	ft_parser(t_all *all, int len)
 		else
 			all->num = ra(all->num, len);
 	}
-	//free(all->num);
 	if (all->numb)
 		free(all->numb);
 }

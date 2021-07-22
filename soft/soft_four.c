@@ -6,13 +6,13 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 22:06:04 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 22:27:12 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 23:09:03 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-char *ft_strcpy(char *str)
+char	*ft_strcpy(char *str)
 {
 	int		i;
 	char	*mimik;
@@ -44,4 +44,3 @@ int	*ft_strcpy_int(int *num, int len)
 	free(num);
 	return (sum);
 }
-

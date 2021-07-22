@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 02:09:54 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 22:12:41 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/22 02:58:55 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ typedef struct s_all
 {
 	int		*mimik;
 	char	*str;
+	int		*steck;
 	int		*mimiktwo;
 	int		*num;
 	int		*numb;
@@ -63,5 +64,7 @@ void	ft_one_hundred_num(t_all *all, int len);
 void	ft_five_hundred_num(t_all *all, int len);
 char	*ft_strcpy(char *str);
 int		*ft_strcpy_int(int *num, int len);
+void	ft_make_sort_stek(t_all *all, int len);
+int		wich_one(int i, int j, int sum, t_all *all);
 
 #	endif

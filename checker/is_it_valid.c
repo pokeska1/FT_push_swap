@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:46:58 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 21:22:34 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/22 01:05:09 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_is_it_valid(t_all *all, int len)
 		{
 			if (all->num[all->j] == all->num[all->i])
 			{
+				printf("%d=%d %d=%d", all->j, all->num[all->j], all->i, all->num[all->i]);
 				all->error = -1;
 				return ;
 			}

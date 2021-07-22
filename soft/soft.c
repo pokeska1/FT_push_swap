@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:08:42 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 21:22:02 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 23:11:49 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_error(char *str)
 {
 	write(1, str, ft_strlen(str));
-	exit(1);
+	return ;
 }
 
 char	*ft_calloc(int i)

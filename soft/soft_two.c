@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 21:40:30 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 21:19:03 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/07/21 23:57:42 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,12 @@ int	is_digit(char *str)
 	while (str[i])
 	{
 		if (str[i] < 48 || str[i] > 57)
+		{
 			if (str[i] == '-' && (str[i + 1] < 48 || str[i + 1] > 57))
 				return (0);
+			else if (str[i] != '-')
+				return (0);
+		}
 		i++;
 	}
 	return (1);
