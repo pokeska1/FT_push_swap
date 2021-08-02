@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 03:31:43 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/22 03:31:02 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/02 19:34:45 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ void	ft_one_hundred_num(t_all *all, int len)
 	organaizer(all);
 	while(all->steck[0] != all->num[all->i])
 		all->i++;
-	if (0 + 1 < all->len_full)
+	if (0 + 1 < all->len_full) // странное говно 
 		while(all->steck[all->check + 1] != all->num[all->j])
 			all->j++;
 	else
@@ -126,6 +126,7 @@ void	ft_one_hundred_num(t_all *all, int len)
 	while (all->lena != 1)
 	{
 		all->check++;
+		ft_make_sort_stek(all, all->lena);
 		ft_one_hundred_num(all, len);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:06:45 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/22 03:10:01 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/02 20:43:32 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	pa(t_all *all, int len)
 
 void	pb_two(t_all *all, int len)
 {
+	(void)len;
 	all->buf = all->num[0];
 	if (all->num)
 	{
@@ -63,7 +64,7 @@ void	pb_two(t_all *all, int len)
 	all->i = 0;
 	all->j = 1;
 	all->mimiktwo[0] = all->buf;
-	while (all->j != len)
+	while (all->j != all->lenb - 1)
 	{
 		all->mimiktwo[all->j] = all->numb[all->i];
 		all->i++;
@@ -75,7 +76,7 @@ void	pb_two(t_all *all, int len)
 		free(all->numb);
 		all->numb = NULL;
 	}
-	all->numb = ft_strcpy_int(all->mimiktwo, all->lenb);
+	all->numb = ft_strcpy_int(all->mimiktwo, all->lenb - 1);
 }
 
 void	pb(t_all *all, int len)
@@ -83,11 +84,11 @@ void	pb(t_all *all, int len)
 	ft_write("pb\n");
 	all->lenb++;
 	all->lena--;
-	all->mimik = ft_calloc_int(all->mimik, all->len_full);
-	all->mimiktwo = ft_calloc_int(all->mimiktwo, all->len_full);
+	all->mimik = ft_calloc_int(all->mimik, all->lena);
+	all->mimiktwo = ft_calloc_int(all->mimiktwo, all->lenb);
 	all->i = 0;
 	all->j = 1;
-	while (all->j != all->lena)
+	while (all->j < all->lena + 1)
 	{
 		all->mimik[all->i] = all->num[all->j];
 		all->i++;

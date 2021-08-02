@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 21:38:06 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/22 03:14:38 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/02 19:35:50 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ void	ft_make_sort_stek(t_all *all, int len)
 		else
 			all->i++;
 	}
+	// if (all->steck)
+	// 	free(all->steck);
 	all->steck = ft_strcpy_int(steck, len);
 }
