@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:46:58 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/22 01:05:09 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/04 04:15:13 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_is_it_valid(t_all *all, int len)
 		{
 			if (all->num[all->j] == all->num[all->i])
 			{
-				printf("%d=%d %d=%d", all->j, all->num[all->j], all->i, all->num[all->i]);
 				all->error = -1;
 				return ;
 			}
@@ -38,7 +37,7 @@ void	ft_is_it_valid(t_all *all, int len)
 	return ;
 }
 
-int	ft_numbers_sorted(int *num, int	len)
+int	ft_numbers_sorted(int *num, int len)
 {
 	int	i;
 	int	j;
@@ -49,6 +48,23 @@ int	ft_numbers_sorted(int *num, int	len)
 	{
 		if (i + 1 < len)
 			if (num[i] > num[i + 1])
+				return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	ft_numbers_sorted_back(int *num, int len)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i != len)
+	{
+		if (i + 1 < len)
+			if (num[i] < num[i + 1])
 				return (0);
 		i++;
 	}

@@ -9,12 +9,12 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "/Users/jmarian/Desktop/21/0*_lvl/my_first_sort/push_swap",
-			"args": ["5", "7", "1", "35", "6"],
+			"args": ["12 2 3 5 12"],
 			"stopAtEntry": false,
 			"cwd": "/Users/jmarian/Desktop/21/0*_lvl/my_first_sort",
 			"environment": [],
 			"externalConsole": false,
-			"MIMode": "lldb",
+			"MIMode": "lldb"
 		}
 	]
 }

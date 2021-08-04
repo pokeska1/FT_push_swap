@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 02:09:54 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/22 02:58:55 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/03 05:33:24 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,29 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+
+typedef struct s_a
+{
+	int		*adress;
+	int		len;
+	int		midel_stackfull;
+	int		midel_stacka;
+	int		midel_stackb;
+	int		lower_pointer;
+}			t_a;
+
+typedef struct s_p
+{
+	int		*pointera;
+	int		*pointerb;
+	int		*stack_a;
+	int		*stack_b;
+}			t_p;
+
 typedef struct s_all
 {
+	t_p		p;
+	t_a		a;
 	int		*mimik;
 	char	*str;
 	int		*steck;
@@ -31,6 +52,8 @@ typedef struct s_all
 	int		lena;
 	int		lenb;
 	int		buf;
+	int		slesh_null;
+	int		result;
 }			t_all;
 
 int		*sa(int *str);
@@ -66,5 +89,8 @@ char	*ft_strcpy(char *str);
 int		*ft_strcpy_int(int *num, int len);
 void	ft_make_sort_stek(t_all *all, int len);
 int		wich_one(int i, int j, int sum, t_all *all);
-
+int		ft_numbers_sorted_back(int *num, int len);
+int		*rrb(int *num, int len);
+int		*rb(int	*num, int len);
+void	ft_make_adrees_pointer(t_all *all);
 #	endif
