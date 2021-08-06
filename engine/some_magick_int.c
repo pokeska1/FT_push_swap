@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 16:30:19 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/06 23:41:19 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 01:28:51 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ void	ft_make_int_four(int argc, char **argv, t_all *all)
 	{
 		if (!is_digit(argv[all->j]))
 		{
-			// if (all->num)
-			// 	free(all->num);
 			all->error = -1;
 			return ;
 		}
@@ -50,7 +48,7 @@ void	ft_make_int_three(char **argv, t_all *all)
 			break ;
 		if (!is_digit_char(argv[1][all->i]))
 			all->error = -1;
-		if (all->j >= 1)// argv[1][all->i] == '-' || 
+		if (all->j >= 1)
 		{
 			all->len_full--;
 		}
@@ -63,8 +61,10 @@ void	ft_make_int_three(char **argv, t_all *all)
 		all->error = -1;
 		return ;
 	}
-	//if ((ft_strlen(all->str) == 10 && all->str[0] != '-'))
-	all->num[all->check++] = ft_atoi(all->str);
+	all->atoi = ft_atoi(all->str);
+	if (all->atoi > 2147483647 || all->atoi < -2147483648)
+		all->error = -1;
+	all->num[all->check++] = (int)all->atoi;
 	free(all->str);
 	all->j = 0;
 }
@@ -96,38 +96,17 @@ void	ft_make_adrees_pointer(t_all *all)
 	all->a.len = all->lena / 5;
 	if (all->a.len < 2)
 		all->a.len = 2;
-	// if (all->p.counte == 0)
-	// {
-		all->a.adress = ft_calloc_int(all->a.adress, all->a.len);
-		while (all->j != all->a.len)
-		{
-			while (all->steck[all->j] != all->num[all->i])
-				all->i++;
-			all->a.adress[all->j] = all->i;
-			all->i = 0;
-			all->j++;
-		}
-	/*	all->p.counte++;
-	}
-	else
+	if (all->lena == 1)
+		all->a.len = 1;
+	all->a.adress = ft_calloc_int(all->a.adress, all->a.len);
+	while (all->j != all->a.len)
 	{
-		while (all->steck[all->a.lower_pointer] != all->num[all->i])
-				all->i++;
-		
-		int	*mimik;
-		
-		mimik = NULL;
-		mimik = ft_calloc_int(mimik, all->a.len);
-		while (all->j != all->a.len)
-		{
-			if (all->j != all->a.lower_pointer)
-				mimik[all->i++] = all->a.adress[all->j];
-			all->j++;
-		}
-		free(all->a.adress);
-		all->a.adress = NULL;
-		all->a.adress = ft_strcpy_int(mimik, all->j - 1);
-	}*/
+		while (all->steck[all->j] != all->num[all->i])
+			all->i++;
+		all->a.adress[all->j] = all->i;
+		all->i = 0;
+		all->j++;
+	}
 }
 
 void	ft_make_int(int argc, char **argv, t_all *all)

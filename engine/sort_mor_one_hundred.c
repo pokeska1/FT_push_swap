@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 03:31:43 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/06 23:32:17 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 01:28:08 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,8 +161,9 @@ void	ft_make_pointer(t_all *all)
 //тело функции
 void	ft_one_hundred_num(t_all *all, int len)
 {
+	int j;
 	(void)len;
-	all->which_int = 0;
+	j = 0;
 	while (all->lena != 0)
 	{
 		organaizer(all);
@@ -212,6 +213,6 @@ void	ft_one_hundred_num(t_all *all, int len)
 		// all->a.adress = NULL;
 		if  (all->lena >= 1)
 			ft_make_adrees_pointer(all);
-		all->which_int++;
+		j++;
 	}
 }	

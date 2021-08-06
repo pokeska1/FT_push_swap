@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 21:38:06 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/07 00:18:27 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 01:39:04 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,47 +17,10 @@ void	ft_make_sort_stek(t_all *all, int len)
 //	int			*steck;
 	
 	long int	x;
+	int			*mimik;
 
 	organaizer(all);
-	// steck = NULL;
-	// steck = ft_calloc_int(steck, len);
-	// all->i = ft_min(all->num, len);
-	// steck[all->j] = all->num[all->i];
-//	all->i = 0;
-	x = 0;// 1
-	/*
-	steck[all->j] = all->num[all->i];
-	
-	while (all->i != len - 1)
-	{
-		
-		if (steck[all->j] + x == all->num[all->i] && all->i != len)
-		{
-			all->j++;
-			steck[all->j] = all->num[all->i];
-			all->i = 0;
-			x = 1;
-		}
-		else if(all->i == len)
-		{
-			all->i = 0;
-			x++;
-		}
-		else
-			all->i++;
-			
-		if((all->i + 1 != len) && steck[all->j] > all->num[all->i])
-		{
-			steck[all->j + 1] = steck[all->j];
-			steck[all->j] = all->num[all->i];
-			all->i = 0;
-			all->j++;
-		}
-		all->i++;
-	}
-	*/
-	int *mimik;
-
+	x = 0;
 	mimik = NULL;
 	if (all->lena == all->len_full || all->lena == 0)
 	{

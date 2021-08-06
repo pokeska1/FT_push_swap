@@ -6,16 +6,16 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 21:35:50 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/06 22:07:30 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 01:19:05 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static int	proverkaminus(char *str, int i)
+static long int	proverkaminus(char *str, long int i)
 {
-	int	minus;
-	int	check;
+	long int	minus;
+	long int	check;
 
 	minus = 0;
 	check = 0;
@@ -40,7 +40,7 @@ static int	proverkaminus(char *str, int i)
 	return (1);
 }
 
-static int	probel(char *str, int i)
+static long int	probel(char *str, long int i)
 {
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v'
 		|| str[i] == '\f' || str[i] == '\r' || str[i] == '\n'
@@ -65,9 +65,9 @@ static int	probel(char *str, int i)
 	return (i);
 }
 
-static int	proverkanebukva(char *str, int i, int minus)
+static long int	proverkanebukva(char *str, long int i, long int minus)
 {
-	int	mimik;
+	long int	mimik;
 
 	mimik = i + 1 % 10;
 	if (minus != 0)
@@ -80,10 +80,10 @@ static int	proverkanebukva(char *str, int i, int minus)
 		return (1);
 }
 
-static int	zapis(char *str, int i, int minus)
+static long int	zapis(char *str, long int i, long int minus)
 {
-	int	shet;
-	int	sum;
+	long int	shet;
+	long int	sum;
 
 	sum = 0;
 	shet = 0;
@@ -104,11 +104,11 @@ static int	zapis(char *str, int i, int minus)
 	return (sum);
 }
 
-int	ft_atoi(char *str)
+long int	ft_atoi(char *str)
 {
-	int	i;
-	int	minus;
-	int	result;
+	long int	i;
+	long int	minus;
+	long int	result;
 
 	i = 0;
 	minus = proverkaminus(str, i);

@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 12:56:18 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/06 23:27:58 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 01:43:16 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,23 +31,19 @@ int	main(int argc, char **argv)
 {
 	t_all	all;
 
-	all.p.counte = 0;
-	all.error = 0;
 	if (argc < 2)
-	{
-		ft_error("Error: need more param!\n");
 		return (1);
-	}
+	ft_grate_start(&all);
 	ft_make_int(argc, argv, &all);
 	if (all.error == -1)
 	{
-		ft_error("Error: you have replica int\n");
+		ft_error("Error\n");
 		return (1);
 	}
 	ft_is_it_valid(&all, all.len_full);
 	if (all.error == -1)
 	{
-		ft_error("Error: you have replica int\n");
+		ft_error("Error\n");
 		return (1);
 	}
 	first_more_space(&all);

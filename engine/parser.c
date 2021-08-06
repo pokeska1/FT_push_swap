@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 22:37:58 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/04 05:07:39 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 01:22:27 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,41 +118,35 @@ void	ft_parser(t_all *all, int len)
 		all->p.stack_b = ft_calloc_int(all->p.stack_b, all->a.len);
 		ft_make_adrees_pointer(all);
 		ft_one_hundred_num(all, len);
-		
-		organaizer(all);//checker !
-		//узнаем где чейчас макс инт
-		int maxint;
-		int pointer_int;
-		
-		maxint = all->numb[0];
+		organaizer(all);
+		all->maxint = all->numb[0];
 		while (all->j != all->len_full)
 		{
-			if (all->numb[all->j] > maxint)
+			if (all->numb[all->j] > all->maxint)
 			{
-				maxint = all->numb[all->j];
-				pointer_int = all->j;
+				all->maxint = all->numb[all->j];
+				all->pointer_int = all->j;
 			}
 			all->j++;
 		}
-		// узнали
-		if (pointer_int > all->a.midel_stackfull)
+		if (all->pointer_int > all->a.midel_stackfull)
 		{
-			pointer_int = all->len_full - pointer_int;
-			while (pointer_int > 0)
+			all->pointer_int = all->len_full - all->pointer_int;
+			while (all->pointer_int > 0)
 			{
 				all->numb = rrb(all->numb, all->len_full);
-				pointer_int--;
+				all->pointer_int--;
 			}
 		}
 		else
 		{
-			while (pointer_int > 0)
+			while (all->pointer_int > 0)
 			{
 				all->numb = rb(all->numb, all->len_full);
-				pointer_int--;
+				all->pointer_int--;
 			}
 		}
-		organaizer(all);//checker !
+		organaizer(all);
 		while (all->lenb != 1)
 			pa(all, all->lenb);
 	}
