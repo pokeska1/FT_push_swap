@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 03:31:43 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/04 03:01:39 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/06 23:32:17 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,6 @@ void	ft_nide_move_to_place_a_in_b(t_all *all, int num, int i, int len)
 		j = 0;
 		jj = all->lenb - 2;
 		x = 0;
-	//	int zero;
-
-		//zero = 0;
 		int minimum;
 		int max;
 
@@ -75,16 +72,7 @@ void	ft_nide_move_to_place_a_in_b(t_all *all, int num, int i, int len)
 			}
 			if (all->i + 1 == all->lenb)
 				if (minimum == all->numb[0] && minimum > all->num[num])
-				{
-					// while (all->j != all->lenb)
-					// {
-					// 	if (max < all->numb[all->j])
-					// 		max = all->numb[all->j];
-							
-					// 	all->j++;
-					// }
 					minimum = max;
-				}
 			all->i++;
 		}
 		while (meh) // определяем сколько движений нужно
@@ -97,13 +85,11 @@ void	ft_nide_move_to_place_a_in_b(t_all *all, int num, int i, int len)
 					all->p.stack_b[i] = 1;
 					x--;
 				}
-				//if (all->numb[jj--] > all->num[num] && all->numb[zero] < all->num[num])
 				if(jj >= 0 && meh != 0)
 					if (all->numb[jj--] == minimum) 
 					{
 						meh = 0;
 						all->p.stack_b[i] = 0;
-					//	x--;
 					}
 				x++;
 				if (x > all->a.midel_stackb)
@@ -113,7 +99,6 @@ void	ft_nide_move_to_place_a_in_b(t_all *all, int num, int i, int len)
 					meh = 0;
 					return ;
 				}
-				//zero = jj + 1;
 			}
 			else
 			{
@@ -141,36 +126,6 @@ void	ft_nide_move_to_place_a_in_b(t_all *all, int num, int i, int len)
 		}
 			all->p.pointerb[i] = x;
 	}
-/*(t_all *all, int midle_stack, int mino, int y)
-	int	pointx;
-	int pointy;
-
-	if (mino < midle_stack)
-		pointx = mino;
-	else
-	{
-		pointx = all->lena - mino;
-		mino = mino - all->lena;
-	}
-	if (y < midle_stack)
-		pointy = y;
-	else
-	{
-		pointy = all->lena - y;
-		y = y - all->lena;
-	}
-	// здесь нужно придумать и сделать увелечение счетчика point если нужно двигать ещё и стек б 
-	
-	if (all->lenb > 1)
-	{
-		if ()
-	}
-	
-	//
-	if (pointx < pointy)
-		return(mino);
-	else
-		return(y);*/
 }
 
 // заполняем массив поинтер
@@ -201,15 +156,13 @@ void	ft_make_pointer(t_all *all)
 		}
 		all->i++;
 	}
-	
 }
 
 //тело функции
 void	ft_one_hundred_num(t_all *all, int len)
 {
-	int j;
 	(void)len;
-	j = 0;
+	all->which_int = 0;
 	while (all->lena != 0)
 	{
 		organaizer(all);
@@ -251,158 +204,14 @@ void	ft_one_hundred_num(t_all *all, int len)
 			}
 		}
 		pb(all, all->lenb - 1);
-		free(all->steck);
-		all->steck = NULL;
+		//free(all->steck);
+		//all->steck = NULL;
 		if  (all->lena >= 1)
 			ft_make_sort_stek(all, all->lena);
-		free(all->a.adress);
-		all->a.adress = NULL;
+		// free(all->a.adress);
+		// all->a.adress = NULL;
 		if  (all->lena >= 1)
 			ft_make_adrees_pointer(all);
-		j++;
+		all->which_int++;
 	}
 }	
-	//all->buf = ft_nide_move_to_place_a_in_b(all, all->check, all->i, all->j);//сколько действий нужно для вставки числа из стека а в стек б
-	
-// 	if (all->p.stack_a > 0)
-// 		while (all->buf)
-// 		{
-// 			all->num = ra(all->num, all->lena);
-// 			all->buf--;
-// 		}
-// 	else
-// 		while (all->buf)
-// 	{
-// 		all->num = rra(all->num, all->lena);
-// 			all->buf++;
-// 	}
-// }
-// void	make_stack_lother(t_all *all, int i)
-// {
-// 	int	*new;
-// 	int	x;
-// 	int	j;
-
-// 	x = 0;
-// 	j = 0;
-// 	new = NULL;
-// 	new = ft_calloc_int(new, all->lena);
-// 	while (j != all->lena)
-// 	{
-// 		if (x != i)
-// 		{
-// 			new[j] = all->steck[x];
-// 			j++;
-// 		}
-// 		x++;
-// 	}
-// 	free(all->steck);
-// 	all->steck = new;
-// }
-
-// int	wich_one(int i, int j, int sum, t_all *all)
-// {
-// 	if (i < sum && j < sum)
-// 	{
-// 		if (i < j)
-// 		{
-// 			make_stack_lother(all, i);
-// 			return (i);
-// 		}
-// 		else if (j < i)
-// 		{
-// 			make_stack_lother(all, j);
-// 			return (j);
-// 		}
-// 	}
-// 	else if (i >= sum && j < sum)
-// 	{
-// 		if (((all->len_full + 1) - i) < j)
-// 		{
-// 			make_stack_lother(all, i);
-// 			return (i - (all->len_full + 1));
-// 		}
-// 		else if (((all->len_full + 1) - i) > j)
-// 		{
-// 			make_stack_lother(all, j);
-// 			return (j);
-// 		}
-// 	}
-// 	else if (i < sum && j >= sum)
-// 	{
-// 		if (i < ((all->len_full + 1) - j))
-// 		{
-// 			make_stack_lother(all, i);
-// 			return (i);
-// 		}
-// 		else if (((all->len_full + 1) - j) < i)
-// 		{
-// 			make_stack_lother(all, j);
-// 			return (j - (all->len_full + 1));
-// 		}
-// 	}
-// 	else if (i == j)
-// 	{
-// 		if (i < sum)
-// 			return(i);
-// 		else
-// 		{
-// 			make_stack_lother(all, i);
-// 			return (i - (all->len_full + 1));
-// 		}
-// 	}
-// 	else
-// 	{
-// 		if (i > j)
-// 		{
-// 			make_stack_lother(all, i);
-// 			return (i - (all->len_full + 1));
-// 		}
-// 		else
-// 		{
-// 			make_stack_lother(all, j);
-// 			return (j - (all->len_full + 1));
-// 		}
-// 	}
-// 	return (0);
-// }
-
-// void	ft_one_hundred_num(t_all *all, int len)
-// {
-// 	int	i;
-
-// 	organaizer(all);
-// 	while(all->steck[0] != all->num[all->i])
-// 		all->i++;
-// 	if (all->check + 1 < all->len_full)
-// 		while(all->steck[all->check + 1] != all->num[all->j])
-// 			all->j++;
-// 	else
-// 		all->j = all->i;
-// 	i = ((all->len_full + 1) / 2);
-// 	i = wich_one(all->i, all->j , i, all);
-// 	if (all->lenb > 2)
-// 		ft_good_plase(all);
-// 	if (i >= 0)
-// 	{
-// 		while (i != 0)
-// 		{
-// 			all->num = ra(all->num, all->lena);
-// 			i--;
-// 		}
-// 	}
-// 	else if (i <= 0)
-// 	{
-// 		while (i < -1)
-// 		{
-// 			all->num = rra(all->num, all->lena);
-// 			i++;
-// 		}
-// 	}
-// 	pb(all, all->lenb);
-// 	while (all->lena != 0)
-// 	{
-// 		ft_make_sort_stek(all, all->lena);
-// 		ft_one_hundred_num(all, len);
-// 	}
-// }

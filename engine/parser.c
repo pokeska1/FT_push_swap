@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 22:37:58 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/04 03:39:27 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/04 05:07:39 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,9 +117,8 @@ void	ft_parser(t_all *all, int len)
 		all->p.stack_a = ft_calloc_int(all->p.stack_a, all->a.len);
 		all->p.stack_b = ft_calloc_int(all->p.stack_b, all->a.len);
 		ft_make_adrees_pointer(all);
-		// all->check = 0;
 		ft_one_hundred_num(all, len);
-		//all->i = wich_one(all->j, all->j , ((all->len_full + 1) / 2), all);
+		
 		organaizer(all);//checker !
 		//узнаем где чейчас макс инт
 		int maxint;
@@ -154,19 +153,6 @@ void	ft_parser(t_all *all, int len)
 			}
 		}
 		organaizer(all);//checker !
-		// while (all->i < all->len_full)
-		// {
-		// 	printf("%d ,", all->numb[all->i++]);
-		// }
-		// while (!ft_numbers_sorted_back(all->numb, all->len_full))
-		// {
-		// 	if (all->i++ > all->len_full)
-		// 	{
-		// 		printf("MEH~!?");
-		// 		exit(1);
-		// 	}
-			
-		// }
 		while (all->lenb != 1)
 			pa(all, all->lenb);
 	}

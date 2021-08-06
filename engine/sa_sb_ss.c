@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 12:57:32 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/04 02:09:44 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/04 05:07:15 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	*rrb(int *num, int len)
 		j++;
 	}
 	free(num);
-	//num = ft_strcpy_int(mimik, len);
 	return (mimik);
 }
 

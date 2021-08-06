@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 12:56:18 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/04 05:03:35 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/06 23:27:58 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ void	first_more_space(t_all *all)
 		all->numb = ft_calloc_int(all->numb, all->len_full);
 		ft_parser(all, all->len_full);
 	}
-	// вроде нужно вырезать от сюда
-	// if (ft_numbers_sorted(all->num, all->len_full))
-	// 	ft_write("OK\n");
-	// else
-	// 	ft_write("KO\n");
-	// до сюда
 	if (all->num)
 		free(all->num);
 	free(all->steck);
@@ -37,6 +31,7 @@ int	main(int argc, char **argv)
 {
 	t_all	all;
 
+	all.p.counte = 0;
 	all.error = 0;
 	if (argc < 2)
 	{

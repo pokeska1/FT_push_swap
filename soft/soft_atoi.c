@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 21:35:50 by jmarian           #+#    #+#             */
-/*   Updated: 2021/07/21 23:33:00 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/06 22:07:30 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,11 +116,5 @@ int	ft_atoi(char *str)
 	if (minus == 0)
 		return (0);
 	result = zapis(str, i, minus);
-	if (minus < 0)
-	{
-		result = result * -1;
-		return (result);
-	}
-	else
-		return (result);
+	return (result);
 }

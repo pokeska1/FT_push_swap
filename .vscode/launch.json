@@ -9,7 +9,7 @@
 			"type": "cppdbg",
 			"request": "launch",
 			"program": "/Users/jmarian/Desktop/21/0*_lvl/my_first_sort/push_swap",
-			"args": ["12 2 3 5 12"],
+			"args": ["83 93 66 11 81 18 7 100 51 37 72 91 40 67 68 16 71 19 50 27 52 80 43 76 63 13 73 85 56 29 53 41 42 55 94 97 26 34 98 77 87 89 24 59 4 12 48 3 96 23 74 39 32 99 33 61 47 2 9 25 90 15 46 58 17 92 36 21 86 31 88 75 45 28 69 84 57 8 60 62 1 22 5 20 64 78 65 38 49 54 35 14 70 44 30 82 6 79 10 95"],
 			"stopAtEntry": false,
 			"cwd": "/Users/jmarian/Desktop/21/0*_lvl/my_first_sort",
 			"environment": [],

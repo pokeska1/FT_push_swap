@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 02:09:54 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/03 05:33:24 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/06 23:31:49 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_p
 	int		*pointerb;
 	int		*stack_a;
 	int		*stack_b;
+	int		counte;
 }			t_p;
 
 typedef struct s_all
@@ -52,7 +53,7 @@ typedef struct s_all
 	int		lena;
 	int		lenb;
 	int		buf;
-	int		slesh_null;
+	int		which_int;
 	int		result;
 }			t_all;
 
