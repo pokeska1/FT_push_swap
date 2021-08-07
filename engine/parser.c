@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 22:37:58 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/07 01:22:27 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 03:22:35 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,34 +46,6 @@ int	*ft_three_num(int *num)
 	return (num);
 }
 
-// вставляем в нужное мессто число
-void	ft_meh(t_all *all, int len)
-{
-	if (all->check == 2)
-	{
-		pa(all, len);
-	}
-	else if (all->check == 1 || all->check == 0)
-	{
-		all->buf = ft_more_nide(all->num, all->lena, all->numb[0]);
-		while (1)
-		{
-			if (all->numb[0] < all->num[0]
-				&& all->numb[0] > all->num[all->lena - 1])
-				break ;
-			if (all->check == 0 && ft_min(all->num, all->lena - 1) == 0)
-				break ;
-			if (ft_rra_or_ra_numb(all->buf, all->lena) == 1)
-				all->num = rra(all->num, all->lena);
-			else
-				all->num = ra(all->num, all->lena);
-		}
-		pa(all, len);
-	}
-	else
-		pa(all, len);
-}
-
 void	ft_five_num(t_all *all, int len)
 {
 	if (len == 4)
@@ -99,6 +71,30 @@ void	ft_five_num(t_all *all, int len)
 	}
 }
 
+//главный движок плюс определение пойнтов на перевод макс int в топ
+void	ft_vip_parser_len_more_fife(t_all *all, int len)
+{
+	all->a.len = all->lena / 5;
+	all->p.pointera = ft_calloc_int(all->p.pointera, all->a.len);
+	all->p.pointerb = ft_calloc_int(all->p.pointerb, all->a.len);
+	all->p.stack_a = ft_calloc_int(all->p.stack_a, all->a.len);
+	all->p.stack_b = ft_calloc_int(all->p.stack_b, all->a.len);
+	ft_make_adrees_pointer(all);
+	ft_one_hundred_num(all, len);
+	organaizer(all);
+	all->maxint = all->numb[0];
+	while (all->j != all->len_full)
+	{
+		if (all->numb[all->j] > all->maxint)
+		{
+			all->maxint = all->numb[all->j];
+			all->pointer_int = all->j;
+		}
+		all->j++;
+	}
+}
+
+//разделение по числам
 void	ft_parser(t_all *all, int len)
 {
 	if (len == 1)
@@ -111,44 +107,8 @@ void	ft_parser(t_all *all, int len)
 		ft_five_num(all, len);
 	else if (len > 5)
 	{
-		all->a.len = all->lena / 5;
-		all->p.pointera = ft_calloc_int(all->p.pointera, all->a.len);
-		all->p.pointerb = ft_calloc_int(all->p.pointerb, all->a.len);
-		all->p.stack_a = ft_calloc_int(all->p.stack_a, all->a.len);
-		all->p.stack_b = ft_calloc_int(all->p.stack_b, all->a.len);
-		ft_make_adrees_pointer(all);
-		ft_one_hundred_num(all, len);
-		organaizer(all);
-		all->maxint = all->numb[0];
-		while (all->j != all->len_full)
-		{
-			if (all->numb[all->j] > all->maxint)
-			{
-				all->maxint = all->numb[all->j];
-				all->pointer_int = all->j;
-			}
-			all->j++;
-		}
-		if (all->pointer_int > all->a.midel_stackfull)
-		{
-			all->pointer_int = all->len_full - all->pointer_int;
-			while (all->pointer_int > 0)
-			{
-				all->numb = rrb(all->numb, all->len_full);
-				all->pointer_int--;
-			}
-		}
-		else
-		{
-			while (all->pointer_int > 0)
-			{
-				all->numb = rb(all->numb, all->len_full);
-				all->pointer_int--;
-			}
-		}
-		organaizer(all);
-		while (all->lenb != 1)
-			pa(all, all->lenb);
+		ft_vip_parser_len_more_fife(all, len);
+		ft_vip_parser_len_more_fife_par_two(all);
 	}
 	all->buf = ft_min(all->num, len);
 	while (!ft_numbers_sorted(all->num, len))

@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 02:09:54 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/07 01:45:50 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 03:22:47 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+
+typedef struct s_t
+{
+	int			meh;
+	int			j;
+	int			jj;
+	int			x;
+}				t_t;
 
 typedef struct s_a
 {
@@ -39,6 +47,7 @@ typedef struct s_all
 {
 	t_p			p;
 	t_a			a;
+	t_t			t;
 	int			*mimik;
 	char		*str;
 	int			*steck;
@@ -100,4 +109,15 @@ int			*rrb(int *num, int len);
 int			*rb(int	*num, int len);
 void		ft_make_adrees_pointer(t_all *all);
 void		ft_grate_start(t_all *all);
+void		ft_make_int_two(char **argv, t_all *all);
+void		ft_make_int_three(char **argv, t_all *all);
+void		ft_make_int_four(int argc, char **argv, t_all *all);
+void		ft_point_for_arr_a(t_all *all, int num, int i, int len);
+void		ft_find_max_min_int(t_all *all, int num);
+void		ft_finde_min_and_max(t_all *all);
+void		ft_finde_score(t_all *all, int i);
+void		ft_finde_lowe_score(t_all *all, int i);
+void		ft_meh(t_all *all, int len);
+void		ft_vip_parser_len_more_fife_par_two(t_all *all);
+
 #	endif

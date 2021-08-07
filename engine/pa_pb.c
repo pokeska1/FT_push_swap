@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/06 13:06:45 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/04 00:07:14 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 02:05:27 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,27 +97,4 @@ void	pb(t_all *all, int len)
 		all->j++;
 	}
 	pb_two(all, len);
-}
-
-int	*ra(int	*num, int len)
-{
-	int	*mimik;
-	int	i;
-	int	j;
-
-	ft_write("ra\n");
-	mimik = NULL;
-	i = 1;
-	j = 0;
-	mimik = ft_calloc_int(mimik, len);
-	mimik[len - 1] = num [0];
-	while (j < len - 1)
-	{
-		mimik[j] = num [i];
-		i++;
-		j++;
-	}
-	if (num)
-		free(num);
-	return (mimik);
 }

@@ -6,7 +6,7 @@
 #    By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/08 16:25:10 by jmarian           #+#    #+#              #
-#    Updated: 2021/08/04 01:40:19 by jmarian          ###   ########.fr        #
+#    Updated: 2021/08/07 03:12:22 by jmarian          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,14 @@ SRCS	=	push_swap.c								\
 			soft/soft_three.c						\
 			soft/soft_four.c						\
 			engine/pa_pb.c							\
+			engine/make_arr.c						\
 			engine/sa_sb_ss.c						\
 			engine/parser.c							\
 			engine/parser_two.c						\
+			engine/ra_rra_rb_rrb.c					\
 			engine/some_magick_int.c				\
 			engine/sort_mor_one_hundred.c			\
+			engine/sort_mor_one_hangred_part_two.c	\
 			checker/is_it_valid.c					\
 
 RM		=	rm -f
