@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 21:38:06 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/07 03:22:39 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/10 10:10:04 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ void	ft_meh(t_all *all, int len)
 			if (all->numb[0] < all->num[0]
 				&& all->numb[0] > all->num[all->lena - 1])
 				break ;
-			if (all->check == 0 && ft_min(all->num, all->lena - 1) == 0)
+			if (all->check == 0 && ft_min(all->num, all->lena) == 0)
 				break ;
 			if (ft_rra_or_ra_numb(all->buf, all->lena) == 1)
 				all->num = rra(all->num, all->lena);

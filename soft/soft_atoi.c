@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/19 21:35:50 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/07 01:19:05 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/10 10:42:46 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ static long int	zapis(char *str, long int i, long int minus)
 		sum = -1;
 	if (shet > 19 && minus == -1)
 		sum = 0;
+	if (minus == -1)
+		return (sum * -1);
 	return (sum);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 03:31:43 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/07 03:10:48 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/07 03:34:08 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,6 +110,8 @@ void	ft_one_hundred_num(t_all *all, int len)
 		pb(all, all->lenb - 1);
 		if (all->lena >= 1)
 			ft_make_sort_stek(all, all->lena);
+		free(all->a.adress);
+		all->a.adress = NULL;
 		if (all->lena >= 1)
 			ft_make_adrees_pointer(all);
 		j++;

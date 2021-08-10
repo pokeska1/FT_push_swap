@@ -6,7 +6,7 @@
 /*   By: jmarian <jmarian@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 03:10:25 by jmarian           #+#    #+#             */
-/*   Updated: 2021/08/07 03:10:50 by jmarian          ###   ########.fr       */
+/*   Updated: 2021/08/10 10:18:51 by jmarian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ void	ft_finde_lowe_score(t_all *all, int i)
 		all->p.stack_b[i] = 1;
 		all->t.x--;
 	}
-	if (all->t.jj >= 1)
+	if (all->t.jj >= 1 && all->p.stack_b[i] != 1)
 	{
 		if (all->numb[all->t.jj--] == all->max)
 		{
